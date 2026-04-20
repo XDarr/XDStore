@@ -13,7 +13,7 @@ section {
 body{
     width: 100%;
     overflow-x: hidden;
-    background-image: url("/assets/XDback.png");
+    background-image: url("assets/XDback.png");
     background-color: #262727;
 }
 .navigasi {
@@ -132,12 +132,14 @@ main {
     justify-content:center;
     text-align: center;
     display: grid;
-    grid-template-columns: repeat(auto-fit, 200px);
+    grid-template-columns: repeat(auto-fit, minmax(120px, 200px ));
 
     margin: 0 auto;
     margin-top: 30px;
     max-width: 1500px; /* Membatasi lebar maksimum grid */
     list-style: none;
+    gap: 20px; /* Jarak antar item grid */
+    padding: 0;
 }
 
 #topup ul li {
@@ -156,6 +158,12 @@ main {
     box-shadow: #191919 0px 0px 10px; /* Efek bayangan */
     font-weight: bold; /* Membuat teks lebih tebal */
     background-color: #191919; /* Warna latar belakang berubah */
+}
+
+#topup ul li img {
+    width: 100%;
+    height: auto;
+    object-fit: contain; /* Menjaga rasio aspek gambar */
 }
 
 #topup ul li a {
@@ -283,7 +291,7 @@ main {
 }
 
 .footer {
-    background-image: url("/assets/Vector 2.svg");
+    background-image: url("assets/Vector 2.svg");
     height: 650px;
     color: white;
     text-align: center;
