@@ -17,11 +17,6 @@ body{
     background-color: #262727;
 }
 .navigasi {
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* Memberi jarak antara logo dan menu */
-
-
     position: sticky; /* Mengunci posisi elemen terhadap viewport/layar */
     top: 0;
     width: 100vw; /* Membuat navbar memenuhi lebar layar */
@@ -32,6 +27,15 @@ body{
     background-color: #191919;
     z-index: 1000;   /* Memastikan navbar berada di atas elemen lain */
     
+}
+
+.nav-container {
+    display: flex;
+    width: 100%;
+    max-width: 1500px; /* Membatasi lebar maksimum navbar */
+    margin: 0 auto; /* Memusatkan navbar */
+    align-items: center;
+    justify-content: space-between; /* Memberi jarak antara logo dan menu */
 }
 
 .logo {
@@ -46,8 +50,9 @@ body{
 }
 .navigasi ul {
     list-style-type: none;
-    display: flex;
-    gap: 20px; /* Jarak antar menu */
+    display: grid;
+    grid-template-columns: repeat(4, auto); /* Membuat 4 kolom dengan lebar otomatis */
+    gap: 20px; /* Jarak antar item menu */
     justify-content: center; /* Mengatur agar menu berada di tengah */
     align-items: center;     /* Mengatur agar menu berada di tengah secara vertikal */
     height: 100%;           /* Membuat ul mengisi tinggi navbar */
@@ -141,13 +146,6 @@ main {
     padding: 0 3%;
 }
 
-@media (max-width: 768px) { /* Aturan untuk layar dengan lebar maksimum 768px (misalnya, tablet dan ponsel) */
-    #topup ul {
-        grid-template-columns: repeat(3, 1fr); /* Ubah menjadi 3 kolom pada layar kecil */
-        gap: 10px; /* Kurangi jarak antar item grid pada layar kecil */
-    }     
-}
-
 #topup ul li {
     transition: all 0.3s ease; /* Membuat gerakan halus */
     overflow: hidden;
@@ -203,13 +201,6 @@ main {
     list-style: none;
     gap: 20px; /* Jarak antar item grid */
     padding: 0 3%;
-}
-
-@media (max-width: 768px) { /* Aturan untuk layar dengan lebar maksimum 768px (misalnya, tablet dan ponsel) */
-    #joki ul {
-        grid-template-columns: repeat(3, 1fr); /* Ubah menjadi 3 kolom pada layar kecil */
-        gap: 10px; /* Kurangi jarak antar item grid pada layar kecil */
-    }     
 }
 
 #joki ul li {
@@ -269,13 +260,6 @@ main {
     padding: 0 3%;
 }
 
-@media (max-width: 768px) { /* Aturan untuk layar dengan lebar maksimum 768px (misalnya, tablet dan ponsel) */
-    #voucher ul {
-        grid-template-columns: repeat(3, 1fr); /* Ubah menjadi 3 kolom pada layar kecil */
-        gap: 10px; /* Kurangi jarak antar item grid pada layar kecil */
-    }     
-}
-
 #voucher ul li {
     transition: all 0.3s ease; /* Membuat gerakan halus */
     overflow: hidden;
@@ -333,4 +317,27 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: flex-end; /* Memaksa konten di dalamnya ke dasar */
+}
+
+@media (max-width: 768px) { /* Aturan untuk layar dengan lebar maksimum 768px (misalnya, tablet dan ponsel) */
+    .navigasi ul {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5px; /* Kurangi jarak antar item menu pada layar kecil */
+    }
+    .navigasi ul li a {
+        font-size: 14px; /* Kurangi ukuran font pada layar kecil */
+        padding: 8px 10px; /* Kurangi padding pada layar kecil */
+    }
+    #topup ul {
+        grid-template-columns: repeat(3, 1fr); /* Ubah menjadi 3 kolom pada layar kecil */
+        gap: 10px; /* Kurangi jarak antar item grid pada layar kecil */
+    }
+    #joki ul {
+        grid-template-columns: repeat(3, 1fr); /* Ubah menjadi 3 kolom pada layar kecil */
+        gap: 10px; /* Kurangi jarak antar item grid pada layar kecil */
+    }
+    #voucher ul {
+        grid-template-columns: repeat(3, 1fr); /* Ubah menjadi 3 kolom pada layar kecil */
+        gap: 10px; /* Kurangi jarak antar item grid pada layar kecil */
+    }   
 }
