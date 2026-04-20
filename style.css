@@ -132,7 +132,7 @@ main {
     justify-content:center;
     text-align: center;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 200px ));
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Menyesuaikan jumlah kolom berdasarkan lebar layar */
 
     margin: 0 auto;
     margin-top: 30px;
@@ -163,6 +163,7 @@ main {
 #topup ul li img {
     width: 100%;
     height: auto;
+    max-width: 120px; /* Membatasi lebar gambar */
     object-fit: contain; /* Menjaga rasio aspek gambar */
 }
 
