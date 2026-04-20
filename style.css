@@ -132,14 +132,20 @@ main {
     justify-content:center;
     text-align: center;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Menyesuaikan jumlah kolom berdasarkan lebar layar */
-
+    grid-template-columns: repeat(6, 1fr); /* Membuat 6 kolom dengan lebar yang sama */
     margin: 0 auto;
     margin-top: 30px;
     max-width: 1500px; /* Membatasi lebar maksimum grid */
     list-style: none;
     gap: 20px; /* Jarak antar item grid */
-    padding: 0;
+    padding: 0 3%;
+}
+
+@media (max-width: 768px) {
+    #topup ul {
+        grid-template-columns: repeat(3, 1fr); /* Ubah menjadi 3 kolom pada layar kecil */
+        gap: 10px; /* Kurangi jarak antar item grid pada layar kecil */
+    }     
 }
 
 #topup ul li {
@@ -163,7 +169,6 @@ main {
 #topup ul li img {
     width: 100%;
     height: auto;
-    max-width: 120px; /* Membatasi lebar gambar */
     object-fit: contain; /* Menjaga rasio aspek gambar */
 }
 
